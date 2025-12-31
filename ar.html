@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,3 +68,74 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dish AR View</title>
+
+    <!-- A-Frame -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+
+    <!-- AR.js -->
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.3.2/aframe/build/aframe-ar.js"></script>
+</head>
+
+<body style="margin:0; overflow:hidden;">
+
+<a-scene embedded arjs="debugUIEnabled:false">
+
+    <!-- HIRO MARKER -->
+    <a-marker preset="hiro">
+
+        <!-- ESPRESSO MODEL -->
+        <a-gltf-model
+            id="espresso"
+            src="models/espresso.glb"
+            scale="0.1 0.1 0.1"
+            position="0 0 0"
+            rotation="0 0 0"
+            visible="false">
+        </a-gltf-model>
+
+        <!-- CAPPUCCINO MODEL -->
+        <a-gltf-model
+            id="cappuccino"
+            src="models/cappuccino.glb"
+            scale="0.2 0.2 0.2"
+            position="0 0 0"
+            rotation="0 0 0"
+            visible="false">
+        </a-gltf-model>
+
+        <!-- COLD COFFEE MODEL -->
+        <a-gltf-model
+            id="coldcoffee"
+            src="models/coldcoffee.glb"
+            scale="0.2 0.2 0.2"
+            position="0 0 0"
+            rotation="0 0 0"
+            visible="false">
+        </a-gltf-model>
+
+    </a-marker>
+
+    <a-entity camera></a-entity>
+
+</a-scene>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const dish = params.get("dish");
+
+    if (dish) {
+        const model = document.getElementById(dish);
+        if (model) {
+            model.setAttribute("visible", "true");
+        }
+    }
+</script>
+
+</body>
+</html>
+>>>>>>> cbb72cf5163cc12540999a60e2d173a09514358c
