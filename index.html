@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cozy Cafe</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <h1 class="logo">☕ Cozy Cafe</h1>
+
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Nav Links -->
+    <nav id="nav-menu">
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#menu" onclick="closeMenu()">Menu</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h2>Fresh Coffee. Cozy Moments.</h2>
+        <p>Handcrafted coffee & delightful treats made with love</p>
+
+        <div class="hero-buttons">
+            <button onclick="orderNow()">Order Now</button>
+            <button class="outline" onclick="openAR('espresso')">
+                See Coffee in 3D ☕
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="section fade-in">
+    <h2 class="section-title">Our Menu</h2>
+
+    <p class="subtitle">
+        Curious how our drinks look?  
+        Tap “View in 3D” to see them using your phone camera.
+    </p>
+
+    <div class="menu-items">
+
+        <!-- Espresso -->
+        <div class="card">
+            <h3>Espresso</h3>
+            <p>Strong & bold coffee</p>
+            <span>₹120</span>
+
+            <button class="ar-btn" onclick="openAR('espresso')">
+                View in 3D ☕
+            </button>
+        </div>
+
+        <!-- Cappuccino -->
+        <div class="card">
+            <h3>Cappuccino</h3>
+            <p>Creamy milk foam</p>
+            <span>₹150</span>
+
+            <button class="ar-btn" onclick="openAR('cappuccino')">
+                View in 3D ☕
+            </button>
+        </div>
+
+        <!-- Cold Coffee -->
+        <div class="card">
+            <h3>Cold Coffee</h3>
+            <p>Refreshing & chilled</p>
+            <span>₹180</span>
+
+            <button class="ar-btn" onclick="openAR('coldcoffee')">
+                View in 3D ☕
+            </button>
+        </div>
+
+        <!-- Muffin -->
+        <div class="card">
+            <h3>Chocolate Muffin</h3>
+            <p>Soft & rich cocoa delight</p>
+            <span>₹90</span>
+        </div>
+
+    </div>
+
+    <!-- HELP NOTE -->
+    <div class="info-box">
+        📱 Best viewed on mobile • No app required • Camera permission needed
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section fade-in">
+    <h2 class="section-title">About Us</h2>
+    <p class="about-text">
+        Cozy Cafe is a warm and welcoming space where coffee lovers gather.
+        We combine premium beans, skilled baristas, and a cozy atmosphere
+        to create memorable coffee experiences.
+    </p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section dark fade-in">
+    <h2 class="section-title light">Contact Us</h2>
+
+    <form class="contact-form" onsubmit="submitForm(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 Cozy Cafe | Crafted with ☕ & ❤️</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
