@@ -72,7 +72,7 @@
 </body>
 </html> -->
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Coffee AR View</title>
@@ -160,117 +160,6 @@
     } else {
         modelViewer.src = models.espresso; // fallback
     }
-</script>
-
-</body>
-</html> -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Coffee AR View</title>
-
-    <!-- A-Frame -->
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-
-    <!-- AR.js (markerless / location-based AR) -->
-    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.3.2/aframe/build/aframe-ar.js"></script>
-
-    <style>
-        body { margin:0; overflow:hidden; font-family:Poppins, sans-serif; }
-        .hint {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0,0,0,0.6);
-            color: #fff;
-            padding: 10px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            z-index: 10;
-        }
-
-        .ar-btn {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 14px 24px;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 30px;
-            border: none;
-            background: linear-gradient(135deg, #c49b63, #6f4e37);
-            color: white;
-            cursor: pointer;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-            z-index: 10;
-        }
-    </style>
-</head>
-
-<body>
-
-<div class="hint">📱 Move your phone to find a flat surface and tap "Place Coffee"</div>
-
-<a-scene
-    embedded
-    arjs="sourceType: webcam; debugUIEnabled: false;"
-    vr-mode-ui="enabled: false"
-    renderer="colorManagement: true, physicallyCorrectLights">
-
-    <a-entity camera look-controls></a-entity>
-
-    <!-- Coffee Image Plane (markerless AR) -->
-    <a-plane id="coffeePlane"
-             src=""
-             width="0.3" height="0.3"
-             rotation="-90 0 0"
-             position="0 0 -1"
-             visible="false"
-             material="shader: flat">
-    </a-plane>
-
-</a-scene>
-
-<button class="ar-btn" id="placeBtn">Place Coffee</button>
-
-<script>
-    // Get the selected dish from URL
-    const params = new URLSearchParams(window.location.search);
-    const dish = params.get("dish");
-
-    // Map dish names to images
-    const images = {
-        espresso: "images/espresso.jpg",
-        cappuccino: "images/cappuccino.jpg",
-        coldcoffee: "images/coldcoffee.jpg"
-    };
-
-    const coffeePlane = document.getElementById("coffeePlane");
-    const placeBtn = document.getElementById("placeBtn");
-
-    // Set the coffee image
-    if(images[dish]){
-        coffeePlane.setAttribute("src", images[dish]);
-    } else {
-        coffeePlane.setAttribute("src", images.espresso);
-        console.warn("Dish not found, using espresso as fallback.");
-    }
-
-    // Initially hidden until user taps "Place Coffee"
-    coffeePlane.setAttribute("visible", "false");
-
-    // Handle place button click
-    placeBtn.addEventListener("click", () => {
-        // Show coffee plane in front of camera
-        coffeePlane.setAttribute("visible", "true");
-        coffeePlane.setAttribute("position", "0 0 -1"); // 1 meter in front
-        placeBtn.style.display = "none"; // hide button after placing
-        document.querySelector(".hint").textContent = "📱 Move around to view coffee in AR";
-    });
 </script>
 
 </body>
