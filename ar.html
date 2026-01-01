@@ -213,12 +213,12 @@
 </body>
 </html> -->
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Coffee AR View</title>
 
-    <!-- Model Viewer -->
+   
     <script type="module"
         src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
     </script>
@@ -271,6 +271,105 @@
 <div class="overlay">
     👉 Tap the AR button to see coffee on your table
 </div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const dish = params.get("dish");
+
+    const models = {
+        espresso: "models/espresso.glb",
+        cappuccino: "models/cappuccino.glb",
+        coldcoffee: "models/coldcoffee.glb"
+    };
+
+    if (models[dish]) {
+        document.getElementById("coffeeModel").src = models[dish];
+    }
+</script>
+
+</body>
+</html>  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Coffee AR View</title>
+
+    <script type="module"
+        src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #000;
+        }
+
+        model-viewer {
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+        }
+
+        .ar-btn {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 14px 22px;
+            font-size: 15px;
+            border-radius: 30px;
+            border: none;
+            background: #c49b63;
+            color: #fff;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .ar-btn:active {
+            transform: translateX(-50%) scale(0.95);
+        }
+
+        .hint {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.65);
+            color: white;
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="hint">
+    Move your phone and tap “View in AR”
+</div>
+
+<model-viewer
+    id="coffeeModel"
+    src=""
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    auto-rotate
+    shadow-intensity="1"
+    exposure="1"
+    ar-placement="floor"
+    ar-scale="auto"
+    environment-image="neutral"
+    interaction-prompt="none"
+>
+    <button slot="ar-button" class="ar-btn">
+        👆 View in AR
+    </button>
+</model-viewer>
 
 <script>
     const params = new URLSearchParams(window.location.search);
