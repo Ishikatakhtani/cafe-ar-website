@@ -137,12 +137,12 @@
 
 </body>
 </html> -->
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Coffee 3D View</title>
 
-    <!-- Model Viewer -->
+   
     <script type="module"
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
     </script>
@@ -207,6 +207,83 @@
 
     if (models[dish]) {
         document.getElementById("coffeeModel").setAttribute("src", models[dish]);
+    }
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Coffee AR View</title>
+
+    <!-- Model Viewer -->
+    <script type="module"
+        src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #000;
+        }
+
+        model-viewer {
+            width: 100vw;
+            height: 100vh;
+            background: transparent;
+        }
+
+        .overlay {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.65);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-size: 14px;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+<model-viewer
+    id="coffeeModel"
+    src=""
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    auto-rotate
+    shadow-intensity="1"
+    exposure="1"
+    ar-placement="floor"
+    ar-scale="auto"
+    environment-image="neutral"
+    interaction-prompt="auto">
+</model-viewer>
+
+<div class="overlay">
+    👉 Tap the AR button to see coffee on your table
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const dish = params.get("dish");
+
+    const models = {
+        espresso: "models/espresso.glb",
+        cappuccino: "models/cappuccino.glb",
+        coldcoffee: "models/coldcoffee.glb"
+    };
+
+    if (models[dish]) {
+        document.getElementById("coffeeModel").src = models[dish];
     }
 </script>
 
