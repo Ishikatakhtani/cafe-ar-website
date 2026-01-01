@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Coffee AR View</title>
@@ -68,6 +68,99 @@
     </button>
 
 </model-viewer>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Coffee AR View</title>
+
+    <script type="module"
+        src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Poppins, sans-serif;
+            background: #000;
+        }
+
+        model-viewer {
+            width: 100vw;
+            height: 100vh;
+            background: transparent;
+        }
+
+        .ar-btn {
+            background: linear-gradient(135deg, #c49b63, #6f4e37);
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+        }
+
+        .hint {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="hint">
+    📱 Tap “View in AR” to place coffee on your table
+</div>
+
+<model-viewer
+    id="coffeeModel"
+    ar
+    ar-modes="scene-viewer quick-look webxr"
+    camera-controls
+    auto-rotate
+    ar-placement="floor"
+    ar-scale="auto"
+    interaction-prompt="none"
+    scale="0.3 0.3 0.3">
+
+    <button slot="ar-button" class="ar-btn">
+        👆 View in AR
+    </button>
+
+</model-viewer>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const dish = params.get("dish");
+
+    const models = {
+        espresso: "models/espresso.glb",
+        cappuccino: "models/cappuccino.glb",
+        coldcoffee: "models/coldcoffee.glb"
+    };
+
+    const modelViewer = document.getElementById("coffeeModel");
+
+    if (models[dish]) {
+        modelViewer.src = models[dish];
+    } else {
+        modelViewer.src = models.espresso; // fallback
+    }
+</script>
 
 </body>
 </html>
