@@ -115,7 +115,7 @@
 </div>
 
 
-<script>
+<!-- <script>
     const params = new URLSearchParams(window.location.search);
     const dish = params.get("dish");
 
@@ -128,7 +128,16 @@
     if (models[dish]) {
         document.getElementById("coffeeModel").src = models[dish];
     }
-</script>
+</script> -->
+<script>
+const modelViewer = document.getElementById("coffeeModel");
+const fallback = document.getElementById("arFallback");
 
+modelViewer.addEventListener("ar-status", (event) => {
+    if (event.detail.status === "failed") {
+        fallback.style.display = "block";
+    }
+});
+</script>
 </body>
 </html>

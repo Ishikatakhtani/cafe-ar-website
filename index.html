@@ -138,16 +138,7 @@
 </footer>
 
 <script src="script.js"></script>
-<script>
-const modelViewer = document.getElementById("coffeeModel");
-const fallback = document.getElementById("arFallback");
 
-modelViewer.addEventListener("ar-status", (event) => {
-    if (event.detail.status === "failed") {
-        fallback.style.display = "block";
-    }
-});
-</script>
 
 </body>
 </html>
