@@ -251,7 +251,7 @@ button:hover {
     margin: 4px 0;
 }
 .ar-btn {
-    background: red; /* coffee brown */
+    background: linear-gradient(135deg, #6f4e37, #3e2723);
     color: #fff;
     border: none;
     padding: 14px 22px;
@@ -260,16 +260,14 @@ button:hover {
     border-radius: 30px;
     cursor: pointer;
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
 }
 
-.ar-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
-}
-
-.ar-btn:active {
-    transform: scale(0.95);
+.hint {
+    text-align: center;
+    padding: 12px;
+    font-size: 14px;
+    background: #3b2f2f;
+    color: white;
 }
 
 

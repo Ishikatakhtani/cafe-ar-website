@@ -31,3 +31,4 @@ function toggleMenu() {
 function closeMenu() {
     document.getElementById("nav-menu").classList.remove("active");
 }
+
