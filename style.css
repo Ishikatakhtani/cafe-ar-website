@@ -250,6 +250,28 @@ button:hover {
     background: white;
     margin: 4px 0;
 }
+.ar-btn {
+    background: red; /* coffee brown */
+    color: #fff;
+    border: none;
+    padding: 14px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.ar-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+.ar-btn:active {
+    transform: scale(0.95);
+}
+
 
 /* MOBILE */
 @media (max-width: 460px) {
