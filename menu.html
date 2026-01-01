@@ -1,0 +1,310 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cozy Cafe | Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <h1 class="logo">☕ Cozy Cafe</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="section">
+    <h2 class="section-title">Our Menu</h2>
+
+    <div class="menu-items">
+        <div class="card">
+            <h3>Espresso</h3>
+            <p>Strong & bold coffee</p>
+            <span>₹120</span>
+            <button onclick="openAR('espresso')">View in 3D ☕</button>
+        </div>
+
+        <div class="card">
+            <h3>Cappuccino</h3>
+            <p>Creamy milk foam</p>
+            <span>₹150</span>
+            <button onclick="openAR('cappuccino')">View in 3D ☕</button>
+        </div>
+
+        <div class="card">
+            <h3>Cold Coffee</h3>
+            <p>Refreshing & chilled</p>
+            <span>₹180</span>
+            <button onclick="openAR('coldcoffee')">View in 3D ☕</button>
+        </div>
+    </div>
+</section>
+<h3 class="menu-category">Snacks & Desserts</h3>
+
+<div class="menu-items">
+    <div class="card">
+        <h3>Blueberry Muffin</h3>
+        <p>Soft, fruity & fresh</p>
+        <span>₹100</span>
+    </div>
+
+    <div class="card">
+        <h3>Cheese Croissant</h3>
+        <p>Flaky & buttery</p>
+        <span>₹130</span>
+    </div>
+
+    <div class="card">
+        <h3>Brownie</h3>
+        <p>Rich chocolate delight</p>
+        <span>₹110</span>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 Cozy Cafe</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cozy Cafe | Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    
+    <h1 class="logo">☕ Cozy Cafe</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+
+<section class="menu-hero">
+    <h2>Our Menu</h2>
+    <p>Freshly brewed coffee & handcrafted delights</p>
+</section>
+<h2 class="typewriter">Welcome to Cozy Cafe</h2>
+
+
+<section class="section">
+    <h3 class="menu-category">☕ Hot Beverages</h3>
+
+    <div class="menu-items">
+        <div class="card">
+            <span class="badge">Popular</span>
+            <h3>Espresso</h3>
+            <p>Strong & bold coffee</p>
+            <div class="price-row">
+                <span class="price">₹120</span>
+                <button onclick="openAR('espresso')">View in 3D</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Cappuccino</h3>
+            <p>Creamy milk foam</p>
+            <div class="price-row">
+                <span class="price">₹150</span>
+                <button onclick="openAR('cappuccino')">View in 3D</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Cold Coffee</h3>
+            <p>Refreshing & chilled</p>
+            <div class="price-row">
+                <span class="price">₹180</span>
+                <button onclick="openAR('coldcoffee')">View in 3D</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section light-bg">
+    <h3 class="menu-category">🥐 Snacks & Desserts</h3>
+
+    <div class="menu-items">
+        <div class="card">
+            <h3>Blueberry Muffin</h3>
+            <p>Soft, fruity & fresh</p>
+            <span class="price">₹100</span>
+        </div>
+
+        <div class="card">
+            <span class="badge new">New</span>
+            <h3>Cheese Croissant</h3>
+            <p>Flaky & buttery</p>
+            <span class="price">₹130</span>
+        </div>
+
+        <div class="card">
+            <h3>Chocolate Brownie</h3>
+            <p>Rich cocoa delight</p>
+            <span class="price">₹110</span>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Cozy Cafe</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+window.addEventListener("scroll", () => {
+    document.querySelectorAll(".parallax").forEach(section => {
+        let speed = 0.4;
+        let offset = window.pageYOffset;
+        section.style.backgroundPositionY = offset * speed + "px";
+    });
+});
+</script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cozy Cafe | Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Optional inline styles for images & buttons */
+        .menu-items img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+        .menu-items button {
+            background: linear-gradient(135deg, #c49b63, #6f4e37);
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .menu-items button:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="navbar">
+    <h1 class="logo">☕ Cozy Cafe</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="menu-hero">
+    <h2>Our Menu</h2>
+    <p>Freshly brewed coffee & handcrafted delights</p>
+</section>
+
+<h2 class="typewriter">Welcome to Cozy Cafe</h2>
+
+<!-- HOT BEVERAGES -->
+<section class="section">
+    <h3 class="menu-category">☕ Hot Beverages</h3>
+
+    <div class="menu-items">
+        <div class="card">
+            <h3>Espresso</h3>
+            <img src="images/espresso.jpg" alt="Espresso">
+            <button onclick="openAR('espresso')">View in AR</button>
+        </div>
+
+        <div class="card">
+            <h3>Cappuccino</h3>
+            <img src="images/cappuccino.jpg" alt="Cappuccino">
+            <button onclick="openAR('cappuccino')">View in AR</button>
+        </div>
+
+        <div class="card">
+            <h3>Cold Coffee</h3>
+            <img src="images/coldcoffee.jpg" alt="Cold Coffee">
+            <button onclick="openAR('coldcoffee')">View in AR</button>
+        </div>
+    </div>
+</section>
+
+<!-- SNACKS & DESSERTS -->
+<section class="section light-bg">
+    <h3 class="menu-category">🥐 Snacks & Desserts</h3>
+
+    <div class="menu-items">
+        <div class="card">
+            <h3>Blueberry Muffin</h3>
+            <p>Soft, fruity & fresh</p>
+            <span class="price">₹100</span>
+        </div>
+
+        <div class="card">
+            <h3>Cheese Croissant</h3>
+            <p>Flaky & buttery</p>
+            <span class="price">₹130</span>
+        </div>
+
+        <div class="card">
+            <h3>Chocolate Brownie</h3>
+            <p>Rich cocoa delight</p>
+            <span class="price">₹110</span>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Cozy Cafe</p>
+</footer>
+
+<script>
+function openAR(dish){
+    // Opens the AR page in a new tab with the selected coffee
+    window.open(`ar.html?dish=${dish}`, "_blank");
+}
+
+// Optional: Scroll parallax for sections
+window.addEventListener("scroll", () => {
+    document.querySelectorAll(".parallax").forEach(section => {
+        let speed = 0.4;
+        let offset = window.pageYOffset;
+        section.style.backgroundPositionY = offset * speed + "px";
+    });
+});
+</script>
+
+</body>
+</html>
