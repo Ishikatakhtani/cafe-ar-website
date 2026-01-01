@@ -68,15 +68,15 @@
 </body>
 </html> -->
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Dish AR View</title>
 
-    <!-- A-Frame -->
+   
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 
-    <!-- AR.js -->
+  
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.3.2/aframe/build/aframe-ar.js"></script>
 </head>
 
@@ -84,10 +84,10 @@
 
 <a-scene embedded arjs="debugUIEnabled:false">
 
-    <!-- HIRO MARKER -->
+    
     <a-marker preset="hiro">
 
-        <!-- ESPRESSO MODEL -->
+       
         <a-gltf-model
             id="espresso"
             src="models/espresso.glb"
@@ -97,7 +97,7 @@
             visible="false">
         </a-gltf-model>
 
-        <!-- CAPPUCCINO MODEL -->
+      
         <a-gltf-model
             id="cappuccino"
             src="models/cappuccino.glb"
@@ -107,7 +107,7 @@
             visible="false">
         </a-gltf-model>
 
-        <!-- COLD COFFEE MODEL -->
+       
         <a-gltf-model
             id="coldcoffee"
             src="models/coldcoffee.glb"
@@ -136,5 +136,79 @@
 </script>
 
 </body>
-</html>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Coffee 3D View</title>
 
+    <!-- Model Viewer -->
+    <script type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Poppins, sans-serif;
+            background: #f5f5f5;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        model-viewer {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+        }
+
+        .hint {
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            background: #3b2f2f;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <model-viewer
+        id="coffeeModel"
+        src=""
+        ar
+        ar-modes="scene-viewer quick-look webxr"
+        camera-controls
+        auto-rotate
+        shadow-intensity="1"
+        exposure="1">
+    </model-viewer>
+
+    <div class="hint">
+        📱 Tap AR to place coffee on your table | 🖥 Drag to rotate
+    </div>
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const dish = params.get("dish");
+
+    const models = {
+        espresso: "models/espresso.glb",
+        cappuccino: "models/cappuccino.glb",
+        coldcoffee: "models/coldcoffee.glb"
+    };
+
+    if (models[dish]) {
+        document.getElementById("coffeeModel").setAttribute("src", models[dish]);
+    }
+</script>
+
+</body>
+</html>
