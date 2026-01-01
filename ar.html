@@ -169,8 +169,6 @@
 <html lang="en">
 <head>
   <title>Coffee AR</title>
-  
-  <!-- Model Viewer -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
   <style>
@@ -183,7 +181,7 @@
     model-viewer {
       width: 100vw;
       height: 100vh;
-      background: transparent;
+      background: transparent; /* Camera feed will show */
     }
 
     .hint {
@@ -199,7 +197,6 @@
       z-index: 10;
     }
 
-    /* AR button styling */
     .ar-btn {
       background: linear-gradient(135deg, #c49b63, #6f4e37);
       color: white;
@@ -212,7 +209,6 @@
     }
   </style>
 </head>
-
 <body>
 
 <div class="hint">📱 Tap “View in AR” to place coffee on your table</div>
@@ -231,6 +227,7 @@
     <button slot="ar-button" class="ar-btn">
         👆 View in AR
     </button>
+
 </model-viewer>
 
 <script>
